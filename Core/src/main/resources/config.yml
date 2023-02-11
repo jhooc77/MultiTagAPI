@@ -1,0 +1,5 @@
+demo: false
+item:
+  material: PAPER
+  customModelData: 101
+  data: 0
