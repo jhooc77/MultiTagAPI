@@ -9,9 +9,9 @@ import java.util.*;
 @ApiStatus.Internal
 public class TagDataContainerImpl implements TagDataContainer {
 
-    private final WeakHashMap<Player, HashMap<UUID, Boolean>> RENDERED_DATA = new WeakHashMap<>();
+    private final WeakHashMap<Player, Map<UUID, Boolean>> RENDERED_DATA = new WeakHashMap<>();
     private final Map<Integer, UUID> ID_DATA = new HashMap<>();
-    private final HashMap<UUID, Tag> TAG_DATA = new HashMap<>();
+    private final Map<UUID, Tag> TAG_DATA = new HashMap<>();
 
     private final MultiTagAPI plugin;
 
@@ -26,7 +26,7 @@ public class TagDataContainerImpl implements TagDataContainer {
 
     @Override
     public void setPlayerRender(Player player, UUID target, boolean rendered) {
-        HashMap<UUID, Boolean> playerData = RENDERED_DATA.getOrDefault(player, new HashMap<>());
+        Map<UUID, Boolean> playerData = RENDERED_DATA.getOrDefault(player, new HashMap<>());
         playerData.put(target, rendered);
         RENDERED_DATA.put(player, playerData);
     }

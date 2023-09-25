@@ -1,4 +1,5 @@
 demo: false
+only-player: true
 item:
   material: PAPER
   customModelData: 101

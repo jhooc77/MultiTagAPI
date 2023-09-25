@@ -28,6 +28,7 @@ public class MultiTagAPIImpl extends JavaPlugin implements MultiTagAPI {
     private Material material = Material.PAPER;
     private int customModelData = 101;
     private int data = 0;
+    private boolean onlyPlayer;
 
     private void init(JavaPlugin plugin) {
         this.plugin = plugin;
@@ -57,6 +58,12 @@ public class MultiTagAPIImpl extends JavaPlugin implements MultiTagAPI {
             case "v1_19_R2":
                 tagHandler = new TagHandler_V1_19_R2(this);
                 break;
+            case "v1_19_R3":
+                tagHandler = new TagHandler_V1_19_R3(this);
+                break;
+            default:
+                tagHandler = new TagHandler_V1_20_R1(this);
+                break;
         }
 
         plugin.getServer().getPluginManager().registerEvents(new Handler(this), plugin);
@@ -71,6 +78,7 @@ public class MultiTagAPIImpl extends JavaPlugin implements MultiTagAPI {
         material = Material.getMaterial(getConfig().getString("item.material"));
         customModelData = getConfig().getInt("item.customModelData");
         data = getConfig().getInt("item.data");
+        onlyPlayer = getConfig().getBoolean("only-player");
         if (getConfig().getBoolean("demo")) {
             getServer().getPluginManager().registerEvents(new DemoHandler(this), this);
             try {
@@ -165,5 +173,15 @@ public class MultiTagAPIImpl extends JavaPlugin implements MultiTagAPI {
     @Override
     public void setData(int data) {
         this.data = data;
+    }
+
+    @Override
+    public boolean isOnlyPlayer() {
+        return onlyPlayer;
+    }
+
+    @Override
+    public void setOnlyPlayer(boolean onlyPlayer) {
+        this.onlyPlayer = onlyPlayer;
     }
 }

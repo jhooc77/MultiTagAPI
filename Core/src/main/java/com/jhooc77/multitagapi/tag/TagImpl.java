@@ -2,6 +2,7 @@ package com.jhooc77.multitagapi.tag;
 
 import com.jhooc77.multitagapi.MultiTagAPI;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -21,6 +22,11 @@ public class TagImpl implements Tag {
 
 
     public TagImpl(LivingEntity entity, MultiTagAPI plugin) {
+        if (plugin.isOnlyPlayer()) {
+            if (!(entity instanceof Player)) {
+                throw new IllegalArgumentException("Only support player now! Please check MultiTagAPI config");
+            }
+        }
         this.plugin = plugin;
         this.entity = entity;
         this.texts.add(entity.getName());

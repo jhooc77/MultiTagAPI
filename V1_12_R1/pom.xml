@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.jhooc77</groupId>
+        <groupId>com.jhooc77.multitagapi</groupId>
         <artifactId>MultiTagAPI</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>MultiTagAPI-V1_12_R1</artifactId>
@@ -25,9 +25,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.jhooc77</groupId>
+            <groupId>com.jhooc77.multitagapi</groupId>
             <artifactId>MultiTagAPI-API</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.2-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

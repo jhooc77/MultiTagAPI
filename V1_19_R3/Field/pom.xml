@@ -7,9 +7,10 @@
         <groupId>com.jhooc77.multitagapi</groupId>
         <artifactId>MultiTagAPI</artifactId>
         <version>1.2-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>MultiTagAPI-V1_19_R1</artifactId>
+    <artifactId>MultiTagAPI-V1_19_R3_Field</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -21,7 +22,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
-            <version>1.19.2-R0.1-SNAPSHOT</version>
+            <version>1.19.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

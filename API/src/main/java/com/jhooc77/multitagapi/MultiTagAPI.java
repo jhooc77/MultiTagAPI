@@ -33,4 +33,8 @@ public interface MultiTagAPI {
     int getData();
 
     void setData(int data);
+
+    boolean isOnlyPlayer();
+
+    void setOnlyPlayer(boolean onlyPlayer);
 }
